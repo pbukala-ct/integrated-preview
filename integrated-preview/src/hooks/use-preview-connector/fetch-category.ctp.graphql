@@ -1,0 +1,20 @@
+fragment Cat on Category {
+  key
+  name(locale: $locale)
+  slug(locale: $locale)
+}
+
+query RetrieveCategory($id: String, $key: String, $locale: Locale!) {
+  category(id: $id, key: $key) {
+    ...Cat
+    ancestors {
+      ...Cat
+      ancestors {
+        ...Cat
+        ancestors {
+          ...Cat
+        }
+      }
+    }
+  }
+}

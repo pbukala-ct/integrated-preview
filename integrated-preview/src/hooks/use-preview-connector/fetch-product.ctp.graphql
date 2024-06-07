@@ -1,0 +1,22 @@
+fragment Sku on ProductVariant {
+  sku
+  id
+}
+
+query RetrieveProduct($id: String, $key: String, $locale: Locale!) {
+  product(id: $id, key: $key) {
+    key
+    masterData {
+      current {
+        name(locale: $locale)
+        slug(locale: $locale)
+        masterVariant {
+          ...Sku
+        }
+        allVariants {
+          ...Sku
+        }
+      }
+    }
+  }
+}

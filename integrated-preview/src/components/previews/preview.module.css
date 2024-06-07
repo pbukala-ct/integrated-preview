@@ -1,0 +1,9 @@
+.mobileFrame {
+    box-shadow: 0 2px 6px 0 rgba(63, 63, 63, 0.6);
+    transition: box-shadow 0.25s;
+    border-radius: 20px;
+    border-width: 20px 3px;
+    background-color: #3f3f3f;
+    margin: 0 auto;
+    transform-origin: left top;
+}
